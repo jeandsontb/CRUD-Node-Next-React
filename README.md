@@ -7,8 +7,9 @@
 </p>
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="PROJECT" title="#PROJECT" src="" width="400px">
+  <img alt="PROJECT" title="#PROJECT" src="https://raw.githubusercontent.com/jeandsontb/CRUD-Node-Next-React/main/assets/CRUD.gif" width="400px">
 </p>
+
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
   <img alt="PROJECT" title="#PROJECT" src="https://raw.githubusercontent.com/jeandsontb/CRUD-Node-Next-React/main/assets/crud01.png" width="400px">
