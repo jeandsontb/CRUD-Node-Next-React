@@ -1,0 +1,214 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Product Documentation",
+    "description": "This is in API Product",
+    "version": "1.0.0",
+    "contact": {
+      "email": "jeandsontb@gmail.com"
+    }
+  },
+  "paths": {
+    "/product/insert": {
+      "post": {
+        "tags": ["Products"],
+        "sumary": "Create a new Product",
+        "description": "Create a new Product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nameProduct": {
+                    "type": "string"
+                  },
+                  "priceProduct": {
+                    "type": "number"
+                  }
+                },
+                "example": {                  
+                  "nameProduct": "Celular Sansung",
+                  "priceProduct": 1200
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/product/list": {
+      "get": {
+        "tags": ["Products"],
+        "summary": "List All Products",
+        "description": "List All Products",
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "codeProduct": {
+                        "type": "string"
+                      },
+                      "nameProduct": {
+                        "type": "string"
+                      },
+                      "priceProduct": {
+                        "type": "number"
+                      }
+                    },
+                    "example": {
+                      "codeProduct": "234d-3223edee-eed2",
+                      "nameProduct": "Tablet Sansung",
+                      "priceProduct": 1200
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/list/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of Product",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": ["Products"],
+        "summary": "List One Product",
+        "description": "List One Product",
+        "responses": {
+          "200": {
+            "description": "success in request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "codeProduct": {
+                      "type": "string"
+                    },
+                    "nameProduct": {
+                      "type": "string"
+                    },
+                    "priceProduct": {
+                      "type": "number"
+                    }
+                  },
+                  "example": {
+                    "codeProduct": "234d-3223edee-eed2",
+                    "nameProduct": "Tablet Sansung",
+                    "priceProduct": 1200
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/update/{id}": {
+      "put": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of Product",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": ["Products"],
+        "summary": "Update One Product",
+        "description": "Update One Product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nameProduct": {
+                    "type": "string"
+                  },
+                  "priceProduct": {
+                    "type": "number"
+                  }
+                },
+                "example": {                  
+                  "nameProduct": "Coloque o nome do produto aqui e o valor abaixo",
+                  "priceProduct": 1200
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "codeProduct": {
+                      "type": "string"
+                    },
+                    "nameProduct": {
+                      "type": "string"
+                    },
+                    "priceProduct": {
+                      "type": "number"
+                    }
+                  },
+                  "example": {
+                    "codeProduct": "234d-3223edee-eed2",
+                    "nameProduct": "Tablet Sansung",
+                    "priceProduct": 1200
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/delete/{id}": {
+      "delete": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of Product",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": ["Products"],
+        "summary": "Delete One Product",
+        "description": "Delete One Product",
+        "responses": {
+          "200": {
+            "description": "success in request"
+          }
+        }
+      }
+    }
+  }
+}
